@@ -8,3 +8,6 @@ echo "hello from cli tools setup"
 
 # brew install fish
 # brew install s-search
+# brew install python3
+# brew install pipenv
+# curl https://sh.rustup.rs -sSf | sh
