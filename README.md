@@ -5,5 +5,5 @@
 ## Usage
 
 ```sh
-$ ./config.sh
+$ ./setup.sh
 ```
