@@ -2,8 +2,14 @@
 
 > A repository for dot files, configurations and setup tools
 
-## Usage
+## Installation
 
 ```sh
-$ ./setup.sh
+$ just
+```
+
+For a listing of recipes:
+
+```sh
+$ just --list
 ```
