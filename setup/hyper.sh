@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "hello from hyper config"
+cp ../hyper/hyper.js ~/.hyper.js
