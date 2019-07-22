@@ -12,5 +12,9 @@ $ ./install.sh
 
 2. Magic
 
-:wizard:
+:sparkles:
+
+3. Profit!
+
+:moneybag:
 
