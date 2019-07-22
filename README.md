@@ -5,11 +5,6 @@
 ## Installation
 
 ```sh
-$ just
+$ ./install.sh
 ```
 
-For a listing of recipes:
-
-```sh
-$ just --list
-```
