@@ -4,7 +4,13 @@
 
 ## Installation
 
+1. Run install script
+
 ```sh
 $ ./install.sh
 ```
+
+2. Magic
+
+:wizard:
 
