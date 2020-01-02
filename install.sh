@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
-if [[ -e $HOME/.spacemacs ]]; then
-    mv $HOME/.spacemacs $HOME/.spacemacs-old
-    cp spacemacs/spacemacs $HOME/.spacemacs
-    date > $HOME/.spacemacs-lid
-    echo "\n" >> $HOME/.spacemacs-lid
-    diff $HOME/.spacemacs $HOME/.spacemacs-old >> $HOME/.spacemacs-lid
-fi
+main() {
+  install
+}
 
-if [[ -e $HOME/.gitignore_global ]]; then
-    mv $HOME/.gitignore_global $HOME/.gitignore_global-old
-    cp git/gitignore_global $HOME/.gitignore_global
-    date > $HOME/.gitignore_global-lid
-    echo "\n" >> $HOME/.gitignore_global-lid
-    diff $HOME/.gitignore_global $HOME/.gitignore_global-old >> $HOME/.gitignore_global-lid
-fi
+install() {
+  echo "Installing dot-files:"
+  echo " - .zshrc"
+  cp zsh/zshrc $HOME/.zshrc
+  echo " - .zsh_aliases"
+  cp zsh/zsh_aliases $HOME/.zsh_aliases
+  # Neovim
+  # Spacevim
+  echo " - .spacemacs"
+  cp spacemacs/spacemacs $HOME/.spacemacs
+  echo " - .gitignore_global"
+  cp git/gitignore_global $HOME/.gitignore_global
+  echo "Done!"
+}
 
+main
