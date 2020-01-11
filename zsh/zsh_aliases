@@ -6,6 +6,7 @@ alias python2='python'
 
 alias de='docker exec -e COLUMNS="$(tput cols)" -e LINES="$(tput lines)" -ti'
 alias dps='docker ps --format "{{.Names}}\n\tContainer ID: {{.ID}}\n\tCommand: {{.Command}}\n\tImage: {{.Image}}\n\tCreatedAt: {{.CreatedAt}}\n\tStatus: {{.Status}}"'
+alias dstop='docker stop `docker ps -q`'
 
 # git
 
