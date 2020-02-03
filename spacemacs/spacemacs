@@ -39,6 +39,7 @@ values."
      helm
      helm-ag
      html
+     javascript
      auto-completion
      elixir
      emacs-lisp

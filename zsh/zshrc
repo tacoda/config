@@ -1,5 +1,4 @@
-ZSH_THEME="kennethreitz"
-# ZSH_THEME="af-magic"
+ZSH_THEME="af-magic"
 
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"
