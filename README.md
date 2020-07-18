@@ -10,6 +10,12 @@
 $ ./install.sh
 ```
 
+Run with `deps` flag to install dependencies:
+
+```sh
+$ ./install.sh --deps
+```
+
 2. Magic
 
 :sparkles:
@@ -17,18 +23,3 @@ $ ./install.sh
 3. Profit!
 
 :moneybag:
-
-## Dependencies
-
-- Git
-- Zsh
-- Oh my zsh
-- Neovim
-- Spacevim
-- VS Code
-
-## TODO
-
-1. Remove spacemacs config
-2. Add spacevim config
-3. Add vscode config

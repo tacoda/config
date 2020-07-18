@@ -33,3 +33,9 @@ chruby 2.4.3
 # brew services start redis
 # brew services start postgres
 
+subl(){
+  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ./$1
+}
+
+eval "$(starship init zsh)"
+
