@@ -16,6 +16,14 @@ Run with `deps` flag to install dependencies:
 $ ./install.sh --deps
 ```
 
+Run with `diff` flag to compare the current configurations with the generated configurations.
+
+```sh
+$ ./install.sh --diff
+```
+
+TODO: Add a diff command
+
 2. Magic
 
 :sparkles:
@@ -24,4 +32,24 @@ $ ./install.sh --deps
 
 :moneybag:
 
-TODO: Add a diff command
+## Make Targets
+
+**install** - install configuration
+
+```sh
+$ make install
+```
+
+**deps** - install dependencies
+
+```sh
+$ make deps
+```
+
+**diff** - diff the current configuration with the generated configuration
+
+```sh
+$ make diff
+```
+
+TODO: Add a diff target
