@@ -63,12 +63,13 @@ This configuration sets up the following tools:
 - 💧 elixir
 - 📝 exa
 - 👀 fd
-- 🦑 fzf
+- 🐇 fzf
 - 🔨 gcc
 - 🌱 git
 - 🔧 neovim
+- ☕️ node
 - 𝒛 ohmyzsh
-- ⚙️ ripgrep
+- 🐆 ripgrep
 - 🦀 rustup
 - 🔧 spacemacs
 - 🔧 spacevim

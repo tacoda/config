@@ -7,14 +7,34 @@ IFS=$'\n\t'
 # OpenSSL
 # xcode-select --install
 
+# MORE TOOLS:
+# 1Password
+# Alfred
+# Azure Data Studio
+# Brave
+# Chrome
+# Dash
+# Docker
+# Focus at Will
+# Grammarly
+# iTerm
+# Kap
+# Magnet
+# Muzzle
+# Notion
+# Postman
+# Spotify
+# The Unarchiver
+# Xnip
+
 
 deps() {
   echo "Installing dependencies:"
   echo "➜ ohmyzsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  echo "➜ chruby, elixir, emacs-plus, fd, gcc, ripgrep, fzf, exa, bat, neovim, starship"
+  echo "➜ bat, chruby, elixir, emacs-plus, exa, fd, fzf, gcc, ripgrep, neovim, node, starship"
   brew tap d12frosted/emacs-plus
-  brew install bat chruby elixir emacs-plus exa fd fzf gcc neovim ripgrep starship
+  brew install bat chruby elixir emacs-plus exa fd fzf gcc neovim node ripgrep starship
   brew linkapps emacs-plus
   echo "➜ rustup"
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
