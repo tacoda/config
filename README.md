@@ -53,3 +53,25 @@ $ make diff
 ```
 
 TODO: Add a diff target
+
+## Details
+
+This configuration sets up the following tools:
+
+- 🦇 bat
+- 💎 chruby
+- 💧 elixir
+- 📝 exa
+- 👀 fd
+- 🦑 fzf
+- 🔨 gcc
+- 🌱 git
+- 🔧 neovim
+- 𝒛 ohmyzsh
+- ⚙️ ripgrep
+- 🦀 rustup
+- 🔧 spacemacs
+- 🔧 spacevim
+- 🚀 starship
+- 🔧 sublime text
+

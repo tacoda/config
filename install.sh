@@ -14,7 +14,7 @@ deps() {
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   echo "➜ chruby, elixir, emacs-plus, fd, gcc, ripgrep, fzf, exa, bat, neovim, starship"
   brew tap d12frosted/emacs-plus
-  brew install chruby elixir emacs-plus fd gcc ripgrep fzf exa bat neovim starship
+  brew install bat chruby elixir emacs-plus exa fd fzf gcc neovim ripgrep starship
   brew linkapps emacs-plus
   echo "➜ rustup"
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
