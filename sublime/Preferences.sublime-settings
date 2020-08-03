@@ -1,10 +1,40 @@
 {
-	"color_scheme": "Nord.sublime-color-scheme",
-	"font_face": "Fira Mono",
-	"font_size": 14,
-	"ignored_packages":
-	[
-		"Vintage"
-	]
+    "auto_complete": true,
+    "auto_complete_commit_on_tab": true,
+    "auto_indent": true,
+    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).sublime-color-scheme",
+    "default_encoding": "UTF-8",
+    "drag_text": false,
+    "draw_white_space": "all",
+    "ensure_newline_at_eof_on_save": true,
+    "fallback_encoding": "UTF-8",
+    "find_selected_text": true,
+    "font_face": "Fira Mono",
+    "font_size": 16,
+    "git_diff_target": "head",
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Rust"
+    ],
+    "index_files": true,
+    "line_padding_bottom": 1,
+    "line_padding_top": 1,
+    "mini_diff": "auto",
+    "preview_on_click": true,
+    "rulers":
+    [
+        80
+    ],
+    "show_definitions": true,
+    "show_git_status": true,
+    "show_navigation_bar": false,
+    "smart_indent": true,
+    "tab_completion": true,
+    "theme": "gruvbox.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": true,
+    "vintage_ctrl_keys": true,
+    "vintage_start_in_command_mode": true
 }
-

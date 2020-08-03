@@ -37,7 +37,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     helm-ag
+     ;; helm-ag
      html
      javascript
      auto-completion
@@ -55,6 +55,7 @@ values."
      rust
      spell-checking
      syntax-checking
+     themes-megapack
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -133,13 +134,16 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(gruvbox
+                         wombat
+                         zenburn
+                         material)
+                        ;; nord
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Mono"
+   dotspacemacs-default-font '("FuraMono Nerd Font"
                                :size 18
                                :weight normal
                                :width normal
@@ -307,6 +311,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/private/themes/")
   )
 
 (defun dotspacemacs/user-config ()
