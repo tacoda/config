@@ -23,3 +23,5 @@ $ ./install.sh --deps
 3. Profit!
 
 :moneybag:
+
+TODO: Add a diff command
