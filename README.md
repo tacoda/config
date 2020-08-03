@@ -1,4 +1,4 @@
-# dot-files
+# dev-config
 
 > A repository for dot files, configurations and setup tools
 
