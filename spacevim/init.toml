@@ -20,7 +20,7 @@
     # install nerd fonts
     guifont = "FuraMono Nerd Font"
     # arrow, curve, slant, nil, fire
-    statusline_separator = "arrow"
+    statusline_separator = "slant"
     statusline_inactive_separator = "nil"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
@@ -46,7 +46,10 @@ name = 'core#tabline'
 name = 'lang#ruby'
 
 [[layers]]
-name = "VersionControl"
+name = "git"
+
+[[layers]]
+name = "lsp"
 
 [[layers]]
 name = "colorscheme"
