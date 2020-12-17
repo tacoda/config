@@ -11,7 +11,7 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "gruvbox"
+    colorscheme = "onedark"
     colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
@@ -25,12 +25,31 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
+    relativenumber = false
 
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
 auto-completion-return-key-behavior = "complete"
 auto-completion-tab-key-behavior = "smart"
+
+[[layers]]
+name = 'core#banner'
+
+[[layers]]
+name = 'core#statusline'
+
+[[layers]]
+name = 'core#tabline'
+
+[[layers]]
+name = 'lang#ruby'
+
+[[layers]]
+name = "VersionControl"
+
+[[layers]]
+name = "colorscheme"
 
 [[layers]]
 name = 'shell'
@@ -42,4 +61,4 @@ name = "tools"
 
 # unite, denite, leaderf, ctrlp, fzf
 [[layers]]
-name = "unite"
+name = "fzf"
