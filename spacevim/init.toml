@@ -28,9 +28,6 @@ name = 'core#tabline'
 name = "git"
 
 [[layers]]
-name = "lsp"
-
-[[layers]]
 name = "colorscheme"
 
 [[layers]]
