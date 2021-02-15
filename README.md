@@ -76,3 +76,27 @@ This configuration sets up the following tools:
 - 🚀 starship
 - 🔧 sublime text
 
+# REQUIREMENTS:
+# PCRE
+# OpenSSL
+# xcode-select --install
+
+# MORE TOOLS:
+# 1Password
+# Alfred
+# Azure Data Studio
+# Brave
+# Chrome
+# Dash
+# Docker
+# Focus at Will
+# Grammarly
+# iTerm
+# Kap
+# Magnet
+# Muzzle
+# Notion
+# Postman
+# Spotify
+# The Unarchiver
+# Xnip
