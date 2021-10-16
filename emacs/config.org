@@ -1,4 +1,4 @@
-#+TITLE: Nate's Emacs Config
+#+TITLE: Ian's Emacs Config
 #+STARTUP: content
 #+PROPERTY: header-args:emacs-lisp :tangle yes :results output silent
 
@@ -74,7 +74,7 @@ I really like what the *N Λ N O* project is doing with Emacs. Lets start with t
     :straight '(nano-theme :type git :host github :repo "rougier/nano-theme")
 
     :config
-    (set-face-attribute 'default nil :font "Fira Code 14")
+    (set-face-attribute 'default nil :font "Fira Code 16")
 
     ;; If emacs has been built with system appearance detection
     ;; add a hook to change the theme to match the system
