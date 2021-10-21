@@ -373,6 +373,78 @@ tabs, but the industry standard is spaces. I use =dir-locals= to enable tabs for
     (setq-default TeX-PDF-mode t))
 #+END_SRC
 
+** Org Roam
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-roam
+  :straight t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory (concat org-directory "/roam"))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert))
+  :config
+  (org-roam-setup))
+#+END_SRC
+
+** Slack
+
+#+BEGIN_SRC emacs-lisp
+;;(use-package slack
+  ;; :straight t)
+;; (el-get-bundle yuya373/helm-slack) ;; optional
+;; (use-package helm-slack :after (slack)) ;; optional
+(use-package slack
+  :straight t
+  :commands (slack-start)
+  :init
+  (setq slack-buffer-emojify t) ;; if you want to enable emoji, default nil
+  (setq slack-prefer-current-team t)
+  :config
+  (slack-register-team
+   :name "westeros-headquarters"
+   :token "xoxc-1036665202626-1036665203314-1621301040693-df531ddd99f664dfd8039071180f8e97b219ca6f87077b6e0e638906306a9b26"
+   :subscribed-channels '(curse-of-strahd)
+   :full-and-display-names t)
+
+  ;; (slack-register-team
+   ;; :name "test"
+   ;; :token "xoxs-yyyyyyyyyy-zzzzzzzzzzz-hhhhhhhhhhh-llllllllll"
+   ;; :subscribed-channels '(hoge fuga))
+
+  (evil-define-key 'normal slack-info-mode-map
+    ",u" 'slack-room-update-messages)
+  (evil-define-key 'normal slack-mode-map
+    ",c" 'slack-buffer-kill
+    ",ra" 'slack-message-add-reaction
+    ",rr" 'slack-message-remove-reaction
+    ",rs" 'slack-message-show-reaction-users
+    ",pl" 'slack-room-pins-list
+    ",pa" 'slack-message-pins-add
+    ",pr" 'slack-message-pins-remove
+    ",mm" 'slack-message-write-another-buffer
+    ",me" 'slack-message-edit
+    ",md" 'slack-message-delete
+    ",u" 'slack-room-update-messages
+    ",2" 'slack-message-embed-mention
+    ",3" 'slack-message-embed-channel
+    "\C-n" 'slack-buffer-goto-next-message
+    "\C-p" 'slack-buffer-goto-prev-message)
+   (evil-define-key 'normal slack-edit-message-mode-map
+    ",k" 'slack-message-cancel-edit
+    ",s" 'slack-message-send-from-buffer
+    ",2" 'slack-message-embed-mention
+    ",3" 'slack-message-embed-channel))
+
+(use-package alert
+  :straight t
+  :commands (alert)
+  :init
+  (setq alert-default-style 'notifier))
+#+END_SRC
+
 *** TODO add major mode hydra for org mode
 
 ** Better capture templates
