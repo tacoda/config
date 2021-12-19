@@ -504,16 +504,15 @@ simpler to use on the fly.
     :after (doct)
     :custom
     (org-todo-keywords
-     '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")
-       (sequence "TASK(f)" "|" "DONE(d)")
-       (sequence "MAYBE(m)" "|" "CANCELLED(c)")))
+     '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELLED(c@)")))
     (org-capture-templates
-     (doct '(("Task" :keys "t" :file "" :headline "Tasks" :template "* TODO %?\n%u\n%a")
-             ("Note" :keys "n" :file "" :headline "Notes" :template "* %?\n%U")
+     (doct '(("Event" :keys "e" :file "" :headline "Events" :template "* EVENT %?\n%u\n%a")
+             ("Task" :keys "t" :file "" :headline "Tasks" :template "* TODO %?\n%u\n%a")
+             ("Note" :keys "n" :file "" :headline "Notes" :template "* NOTE %?\n%U")
              ("TIL" :keys "l" :file "" :headline "Today I Learned..." :template "* TIL %?\n%U")
              ("Code Reviews" :keys "r" :file "" :children
               (("RMT Review" :keys "r" :template-file "capture-templates/rmt.orgcaptmpl")
-               ("EM Review" :keys "e" :template-file "capture-templates/emd.orgcaptmpl"))))))
+               ("DCR Review" :keys "d" :template-file "capture-templates/dcr.orgcaptmpl"))))))
     )
 #+end_src
 
