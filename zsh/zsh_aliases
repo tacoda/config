@@ -1,109 +1,44 @@
-# aliases from plugins
+# bin
 
-alias python2='python'
+alias criteria='$HOME/Code/criteria/bin run'
+
+
+alias ll='ls -lh'
+alias la='ls -alh'
 
 # docker
 
-alias de='docker exec -e COLUMNS="$(tput cols)" -e LINES="$(tput lines)" -ti'
+# alias de='docker exec -e COLUMNS="$(tput cols)" -e LINES="$(tput lines)" -ti'
+
 alias dps='docker ps --format "{{.Names}}\n\tContainer ID: {{.ID}}\n\tCommand: {{.Command}}\n\tImage: {{.Image}}\n\tCreatedAt: {{.CreatedAt}}\n\tStatus: {{.Status}}"'
 alias dstop='docker stop `docker ps -q`'
 
 # git
 
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gd='git diff'
-alias gcl='git clone'
-alias gcm='git commit -m'
-alias gcsm='git commit -S -m'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gf='git fetch'
-alias gfa='git fetch --all --prune'
-alias gu='git pull'
-alias gm='git merge'
-alias gp='git push'
-alias gr='git rebase'
-alias gra='git rebase --abort'
-alias grc='git rebase --continue'
-alias gri='git rebase -i'
-alias grh='git reset HEAD'
-alias grhh='git reset HEAD --hard'
-alias gst='git status'
-alias gsh='git stash'
-alias gl='git log'
+# alias ga='git add'
+# alias gb='git branch'
+# alias gc='git commit'
+# alias gca='git commit --amend'
+# alias gd='git diff'
+# alias gcl='git clone'
+# alias gcm='git commit -m'
+# alias gcsm='git commit -S -m'
+# alias gco='git checkout'
+# alias gcob='git checkout -b'
+# alias gf='git fetch'
+# alias gfa='git fetch --all --prune'
+# alias gu='git pull'
+# alias gm='git merge'
+# alias gp='git push'
+# alias gr='git rebase'
+# alias gra='git rebase --abort'
+# alias grc='git rebase --continue'
+# alias gri='git rebase -i'
+# alias grh='git reset HEAD'
+# alias grhh='git reset HEAD --hard'
+# alias gst='git status'
+# alias gsh='git stash'
+# alias gl='git log'
 alias gll='git log --pretty=format:" * %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias glg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'
-
-# bundle
-
-alias be='bundle exec'
-
-# rails
-
-alias rl='be rails'
-
-alias rlc='rl console'
-alias rls='rl server'
-
-# alias rn='rl generate'
-
-# rake
-
-alias rk='be rake'
-
-# alias rdm='rk db:migrate'
-# alias rr='rk routes'
-
-# rpsec
-
-alias rs='be rspec'
-
-alias clr='clear'
-
-# alias ll='ls -lh'
-# alias la='ls -alh'
-alias ll='exa -lh'
-alias la='exa -alh'
-alias lt='exa -T'
-
-alias fhs='fast-http-server'
-
-# fd
-# find
-
-# rg
-# grep
-
-# awk
-# sed
-
-# tree
-
-# spring?
-
-###################
-# Central Aliases #
-###################
-
-# watchexec
-
-# TODO:
-# * Record common watchexec commands
-# * Generalize where possible
-# * App-specific definitions too, where needed
-
-# NOTE: ALWAYS run with path argument
-alias we='watchexec'
-
-alias wasset='we'
-alias wcuke='we bundle exec script/cucumber'
-alias wdep='we -w Gemfile -w Gemfile.lock bundle check || bundle install'
-alias wjs='we open http://localhost:3000/specs'
-alias wrubo='we rubocop'
-alias wserve='we -w config -r -s SIGKILL bundle exec rails server'
-alias wspec='we script/test'
-alias wyard='we script/yard_check'
+# alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'

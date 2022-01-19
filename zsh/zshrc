@@ -1,41 +1,22 @@
-ZSH_THEME="af-magic"
-
-COMPLETION_WAITING_DOTS="true"
-DISABLE_AUTO_TITLE="true"
-unsetopt correct_all
-
-export PATH=/usr/local/opt/imagemagick@6/bin:$HOME/bin:$HOME/.npm-global/bin:/usr/local/bin:/usr/local/sbin:$HOME/.nimble/bin:$HOME/.cargo/bin:/usr/local/opt/libxml2/bin:$PATH
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/opt/openssl/lib/pkgconfig
 export EDITOR=nvim
 export ERL_AFLAGS="-kernel shell_history enabled"
-export GPG_TTY=$(tty)
-export LANG=en_US.UTF-8
-export UPDATE_ZSH_DAYS=30
-export ZSH="/Users/ijohnson/.oh-my-zsh"
 
-source $ZSH/oh-my-zsh.sh
+function kat() {
+  IMAGE=registry.cmmint.net/platform/kat:latest
+  # Auto-update, but only check once every 48h
+  [[ ! -f $HOME/.kat-update-check || $(find $HOME/.kat-update-check -type f -mtime +48h) ]] && docker pull $IMAGE && touch $HOME/.kat-update-check
+  docker run -it -e "USER=${USER}" -v "${HOME}/.kube:/kube" $IMAGE kat "$@"
+}
 
-plugins=(git history)
-
-shovel() ( cd ~/Code/dev && ./script/run shovel "$@"; )
+function devkat() {
+  IMAGE=devkat
+  docker build $HOME/Code/kat -t $IMAGE -q
+  docker run -it -e "USER=${USER}" -v "${HOME}/.kube:/kube" $IMAGE kat "$@"
+}
 
 source $HOME/.zsh_aliases
 
-source /usr/local/share/chruby/chruby.sh
-chruby 2.4.3
-
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-# brew services start redis
-# brew services start postgres
-
-subl(){
-  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ./$1
-}
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 eval "$(starship init zsh)"
 
