@@ -1,6 +1,6 @@
 # bin
 
-alias criteria='$HOME/Code/criteria/bin run'
+alias criteria='. $HOME/Code/criteria/bin run'
 
 
 alias ll='ls -lh'
