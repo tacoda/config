@@ -1,7 +1,32 @@
 # bin
 
-alias criteria='. $HOME/Code/criteria/bin run'
+alias criteria='$HOME/Code/criteria/bin/run'
 
+# ExPDFMe
+# alchemist
+# arbiter
+# central
+# criteria
+# epa-admin
+# epa_gateway
+# epa_messages
+# epamotron
+# epamotron_client
+# error_traits
+# fake-plan-payer
+# ncpdp_epa
+# pa-starter
+# pbmproxy
+# pdfmotron
+# ping_verifier
+# postgresql
+# prior_auth
+# rambo
+# renewals-api
+# request-keys
+# request-updater
+# support
+# terraform
 
 alias ll='ls -lh'
 alias la='ls -alh'
@@ -13,7 +38,12 @@ alias la='ls -alh'
 alias dps='docker ps --format "{{.Names}}\n\tContainer ID: {{.ID}}\n\tCommand: {{.Command}}\n\tImage: {{.Image}}\n\tCreatedAt: {{.CreatedAt}}\n\tStatus: {{.Status}}"'
 alias dstop='docker stop `docker ps -q`'
 
+# kubectl, helm, tilt, kat
+
 # git
+
+alias gll='git log --pretty=format:" * %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias glg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 
 # alias ga='git add'
 # alias gb='git branch'
@@ -39,6 +69,4 @@ alias dstop='docker stop `docker ps -q`'
 # alias gst='git status'
 # alias gsh='git stash'
 # alias gl='git log'
-alias gll='git log --pretty=format:" * %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias glg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 # alias gbpurge='git branch --merged | grep -v "\*" | grep -v "master" | grep -v "develop" | grep -v "staging" | xargs -n 1 git branch -d'

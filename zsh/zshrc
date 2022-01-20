@@ -16,6 +16,8 @@ function devkat() {
 
 source $HOME/.zsh_aliases
 
+export PATH=$PATH:$USER/bin
+
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 eval "$(starship init zsh)"
