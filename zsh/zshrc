@@ -14,11 +14,9 @@ function devkat() {
   docker run -it -e "USER=${USER}" -v "${HOME}/.kube:/kube" $IMAGE kat "$@"
 }
 
-source $HOME/.zsh_aliases
-
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 export PATH=$PATH:$USER/bin
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+source $HOME/.zsh_aliases
 
 eval "$(starship init zsh)"
 

@@ -1,3 +1,12 @@
 [character]
 success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[nodejs]
+disabled = true
