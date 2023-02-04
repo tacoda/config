@@ -15,8 +15,8 @@ install() {
     echo "➜ ZSH"
     cp zsh/zshrc $HOME/.zshrc
     cp zsh/zsh_aliases $HOME/.zsh_aliases
-    echo "➜ Starship"
-    cp starship/starship.toml $HOME/.config/starship.toml
+    # echo "➜ Starship"
+    # cp starship/starship.toml $HOME/.config/starship.toml
     # echo "➜ Neovim"
     # echo "➜ Emacs"
     # cp -R emacs/ $HOME/.emacs.d
