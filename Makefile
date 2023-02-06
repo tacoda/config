@@ -1,12 +1,13 @@
 deps:
-	echo "➜ Installing Brewfile"
+	echo "➜ Installing dependencies:"
 	mkdir -p $HOME/.config/brew
 	cp brew/Brewfile $HOME/.config/brew/Brewfile
-	echo "➜ Installing Brew Packages"
+	brew update && brew upgrade
 	(cd $HOME/.config/brew && brew bundle)
+	echo "✓ Dependencies installed!"
 
 install:
-	echo "Installing dot-files:"
+	echo "Installing configurations:"
 	echo "➜ ZSH"
 	cp zsh/zshrc $HOME/.zshrc
 	cp zsh/zsh_aliases $HOME/.zsh_aliases
