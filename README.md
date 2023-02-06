@@ -16,3 +16,10 @@ $ make deps
 $ make install
 ```
 
+## TODO
+
+- Add doom emacs setup
+- Add direnv
+- Add nix makefiles
+- Add other configurations
+
