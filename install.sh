@@ -11,40 +11,28 @@ source $HOME/.nix-profile/etc/profile.d/nix.sh
 # Install packages
 nix profile install \
 	"nixpkgs#bat" \
+	"nixpkgs#delta" \
 	"nixpkgs#direnv" \
 	"nixpkgs#emacs" \
+	"nixpkgs#fd" \
 	"nixpkgs#fzf" \
 	"nixpkgs#grex" \
 	"nixpkgs#git" \
 	"nixpkgs#hugo" \
 	"nixpkgs#jq" \
+	"nixpkgs#lsd" \
 	"nixpkgs#kakoune" \
 	"nixpkgs#neovim" \
+	"nixpkgs#procs" \
 	"nixpkgs#ripgrep" \
+	"nixpkgs#sd" \
+	"nixpkgs#tldr" \
 	"nixpkgs#tmux" \
+	"nixpkgs#tokei" \
+	"nixpkgs#xsv" \
+	"nixpkgs#yq" \
+	"nixpkgs#zellij" \
 	"nixpkgs#zsh"
-
-# brew "asdf"
-# brew "bat"
-# brew "delta"
-# brew "dust"
-# brew "fd"
-# brew "fzf"
-# brew "grex"
-# brew "http-server"
-# brew "hugo"
-# brew "jq"
-# brew "lsd"
-# brew "kakoune"
-# brew "procs"
-# brew "ripgrep"
-# brew "sd"
-# brew "starship"
-# brew "tealdeer"
-# brew "tokei"
-# brew "xsv"
-# brew "yq"
-# brew "zellij"
 
 # Add zsh to valid login shells
 command -v zsh | sudo tee -a /etc/shells
@@ -53,6 +41,12 @@ command -v zsh | sudo tee -a /etc/shells
 sudo chsh -s $(which zsh) $USER
 
 # TODO: Add zsh plugins
+cp zsh/zshrc $HOME/.zshrc
+cp zsh/zsh_aliases $HOME/.zsh_aliases
+
+# Copy binaries
+cp -R bin $HOME/bin
+cp -R scripts $HOME/scripts
 
 # TODO: Neovim configuration
 
