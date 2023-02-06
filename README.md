@@ -2,26 +2,16 @@
 
 > A repository for dot files, configurations and setup tools
 
-**Requirements: macOS, make**
+## Installation
 
-## Make Targets
-
-**deps** - Install dependencies
+**install** - Install environment
 
 ```sh
-$ make deps
-```
-
-**install** - Install configurations
-
-```sh
-$ make install
+$ ./install.sh
 ```
 
 ## TODO
 
-- Add nix installation
-  - Revisit portable nix setup
 - Add doom emacs setup
 - Add direnv
 - Add nix makefiles
