@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+print_help() {
+  echo "$0"
+  echo "  Create a new branch named \"NAME\" with the current changes"
+  echo ""
+  echo "Usage: $0 <NAME>"
+}
+
+if [ $# = 0 ]; then
+  print_help && exit 1;
+fi
+
+BRANCH="$1"
+git checkout -b $BRANCH
+git push -u origin HEAD

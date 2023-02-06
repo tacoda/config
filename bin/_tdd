@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+main () {
+	echo "tdd"
+	file=$(find_spec)
+	run_spec $file
+	# echo -n "Proceed? [y/n]: "
+	# read ans
+	# echo $ans
+}
+
+find_spec () {
+	echo -n "Spec to run: "
+	local file=$(fzf)
+	echo "$file"
+}
+
+run_spec () {
+	bin/run rspec $1
+}
+
+main "$@"

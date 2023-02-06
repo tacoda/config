@@ -10,4 +10,7 @@ install:
 	echo "➜ ZSH"
 	cp zsh/zshrc $HOME/.zshrc
 	cp zsh/zsh_aliases $HOME/.zsh_aliases
+	echo "➜ Custom Scripts"
+	cp -R bin/ $HOME/bin
+	cp -R scripts/ $HOME/scripts
 	echo "✓ Configurations installed!"

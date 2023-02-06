@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl -ssL "https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${SEARCH_ENGINE}&q=$1" | \
+	jq '.items'
+	# jq '.items | .[] | .title'

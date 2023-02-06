@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Required dependency: jq
+
+__timestamp(){
+  date "+%Y%m%dT%H%M%S"
+}
+
+__log(){
+  log_level="$1"
+  message="$2"
+  echo '{}' | \
+  jq  --monochrome-output \
+      --compact-output \
+      --raw-output \
+      --arg timestamp "$(__timestamp)" \
+      --arg log_level "$log_level" \
+      --arg message "$message" \
+      '.timestamp=$timestamp|.log_level=$log_level|.message=$message'
+}
+
+__log "$1" "$2"
