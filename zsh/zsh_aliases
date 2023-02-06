@@ -1,33 +1,5 @@
 # bin
 
-alias criteria='$HOME/Code/criteria/bin/run'
-
-# ExPDFMe
-# alchemist
-# arbiter
-# central
-# criteria
-# epa-admin
-# epa_gateway
-# epa_messages
-# epamotron
-# epamotron_client
-# error_traits
-# fake-plan-payer
-# ncpdp_epa
-# pa-starter
-# pbmproxy
-# pdfmotron
-# ping_verifier
-# postgresql
-# prior_auth
-# rambo
-# renewals-api
-# request-keys
-# request-updater
-# support
-# terraform
-
 alias ll='ls -lh'
 alias la='ls -alh'
 
@@ -38,7 +10,7 @@ alias la='ls -alh'
 alias dps='docker ps --format "{{.Names}}\n\tContainer ID: {{.ID}}\n\tCommand: {{.Command}}\n\tImage: {{.Image}}\n\tCreatedAt: {{.CreatedAt}}\n\tStatus: {{.Status}}"'
 alias dstop='docker stop `docker ps -q`'
 
-# kubectl, helm, tilt, kat
+# kubectl, helm, tilt
 
 # git
 

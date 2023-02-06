@@ -1,18 +1,5 @@
-export EDITOR=nvim
+export EDITOR=kak
 export ERL_AFLAGS="-kernel shell_history enabled"
-
-function kat() {
-  IMAGE=registry.cmmint.net/platform/kat:latest
-  # Auto-update, but only check once every 48h
-  [[ ! -f $HOME/.kat-update-check || $(find $HOME/.kat-update-check -type f -mtime +48h) ]] && docker pull $IMAGE && touch $HOME/.kat-update-check
-  docker run -it -e "USER=${USER}" -v "${HOME}/.kube:/kube" $IMAGE kat "$@"
-}
-
-function devkat() {
-  IMAGE=devkat
-  docker build $HOME/Code/kat -t $IMAGE -q
-  docker run -it -e "USER=${USER}" -v "${HOME}/.kube:/kube" $IMAGE kat "$@"
-}
 
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
 export PATH=$PATH:$USER/bin
