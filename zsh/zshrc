@@ -5,5 +5,9 @@ source /opt/homebrew/opt/asdf/libexec/asdf.sh
 export PATH=$PATH:$USER/bin
 source $HOME/.zsh_aliases
 
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
 eval "$(starship init zsh)"
 
