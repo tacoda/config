@@ -91,3 +91,13 @@ TODO: Justfiles >> Custom tools
 TODO: Scripts >> Custom tools
 
 
+## Contents
+
+**`bin`**
+
+Custom binaries: [List](bin/README.md)
+
+**`util`**
+
+Custom utility scripts: [List](util/README.md)
+
