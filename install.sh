@@ -1,18 +1,28 @@
 #!/usr/bin/env bash
 
 main() {
-	install_nix
-	source_nix
-	enable_experimental_features
-	install_packages
-	set_zsh_as_shell
-	add_zsh_config
-	copy_custom_scripts
-	add_neovim_config
-	install_doom
-	add_emacs_config
-	add_git_config
-	source_zsh
+	prompt_user "install_nix" && install_nix
+	prompt_user "source_nix" && source_nix
+	prompt_user "enable_experimental_features" && enable_experimental_features
+	prompt_user "install_packages" && install_packages
+	prompt_user "set_zsh_as_shell" && set_zsh_as_shell
+	prompt_user "add_zsh_config" && add_zsh_config
+	prompt_user "copy_custom_scripts" && copy_custom_scripts
+	# prompt_user "add_neovim_config" && add_neovim_config
+	prompt_user "install_doom" && install_doom
+	# prompt_user "add_emacs_config" && add_emacs_config
+	# prompt_user "add_git_config" && add_git_config
+	prompt_user "source_zsh" && source_zsh
+}
+
+prompt_user() {
+	echo -n "[$1] >> Proceed? [y/n]: "
+	read -r ans
+	if [[ "$ans" == "y" ]]; then
+		return 0
+	else
+		return 1
+	fi
 }
 
 install_nix() {
@@ -71,9 +81,9 @@ copy_custom_scripts() {
 	chmod a+x $HOME/util/*
 }
 
-add_neovim_config() {
+# add_neovim_config() {
 	# TODO
-}
+# }
 
 install_doom() {
 	git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
@@ -81,13 +91,13 @@ install_doom() {
 	$HOME/bin/doom install
 }
 
-add_emacs_config() {
+# add_emacs_config() {
 	# TODO
-}
+# }
 
-add_git_config() {
+# add_git_config() {
 	# TODO
-}
+# }
 
 source_zsh() {
 	source $HOME/.zshrc
