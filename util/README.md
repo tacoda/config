@@ -13,11 +13,23 @@ Automatically re-run a spec when the source changes.
 
 **`new_nix_env.sh`**
 
-> _Depends on:_ **nix**
+> _Depends on:_
+> - **make**
+> - **nix**
 
 Create a new environment using nix.
 
     new_nix_env.sh "python" path/to/python-code
     new_nix_env.sh "javascript" path/to/javascript-code
+
+**`new_docker_env.sh`**
+
+> _Depends on:_
+> - **make**
+> - **docker**
+
+Create a new environment using docker.
+
+    new_docker_env.sh "rails" path/to/rails-code
 
 
