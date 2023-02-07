@@ -1,55 +1,87 @@
 #!/usr/bin/env bash
 
-# Install nix
-sh <(curl -L https://nixos.org/nix/install) --daemon
+main() {
+	install_nix
+	source_nix
+	enable_experimental_features
+	install_packages
+	set_zsh_as_shell
+	add_zsh_config
+	copy_custom_scripts
+	add_neovim_config
+	install_doom
+	add_emacs_config
+}
 
-# Source nix
-source $HOME/.nix-profile/etc/profile.d/nix.sh
+install_nix() {
+	sh <(curl -L https://nixos.org/nix/install) --daemon
+}
 
-# TODO: Enable experimental-features and flakes
+source_nix() {
+	source $HOME/.nix-profile/etc/profile.d/nix.sh
+}
 
-# Install packages
-nix profile install \
-	"nixpkgs#bat" \
-	"nixpkgs#delta" \
-	"nixpkgs#direnv" \
-	"nixpkgs#emacs" \
-	"nixpkgs#fd" \
-	"nixpkgs#fzf" \
-	"nixpkgs#grex" \
-	"nixpkgs#git" \
-	"nixpkgs#hugo" \
-	"nixpkgs#jq" \
-	"nixpkgs#lsd" \
-	"nixpkgs#kakoune" \
-	"nixpkgs#neovim" \
-	"nixpkgs#procs" \
-	"nixpkgs#ripgrep" \
-	"nixpkgs#sd" \
-	"nixpkgs#tldr" \
-	"nixpkgs#tmux" \
-	"nixpkgs#tokei" \
-	"nixpkgs#xsv" \
-	"nixpkgs#yq" \
-	"nixpkgs#zellij" \
-	"nixpkgs#zsh"
+enable_experimental_features() {
+	echo "experimental-features = nix-command flakes" >> $HOME/.config/nix/nix.conf
+	# NOTE: Do I need to source again?
+}
 
-# Add zsh to valid login shells
-command -v zsh | sudo tee -a /etc/shells
+install_packages() {
+	nix profile install \
+		"nixpkgs#bat" \
+		"nixpkgs#delta" \
+		"nixpkgs#direnv" \
+		"nixpkgs#emacs" \
+		"nixpkgs#fd" \
+		"nixpkgs#fzf" \
+		"nixpkgs#grex" \
+		"nixpkgs#git" \
+		"nixpkgs#hugo" \
+		"nixpkgs#jq" \
+		"nixpkgs#lsd" \
+		"nixpkgs#kakoune" \
+		"nixpkgs#neovim" \
+		"nixpkgs#procs" \
+		"nixpkgs#ripgrep" \
+		"nixpkgs#sd" \
+		"nixpkgs#tldr" \
+		"nixpkgs#tmux" \
+		"nixpkgs#tokei" \
+		"nixpkgs#xsv" \
+		"nixpkgs#yq" \
+		"nixpkgs#zellij" \
+		"nixpkgs#zsh"
+}
 
-# Use zsh as default shell
-sudo chsh -s $(which zsh) $USER
+set_zsh_as_shell() {
+	command -v zsh | sudo tee -a /etc/shells
+	sudo chsh -s $(which zsh) $USER
+}
 
-# TODO: Add zsh plugins
-cp zsh/zshrc $HOME/.zshrc
-cp zsh/zsh_aliases $HOME/.zsh_aliases
+add_zsh_config() {
+	cp zsh/zshrc $HOME/.zshrc
+	cp zsh/zsh_aliases $HOME/.zsh_aliases
+}
 
-# Copy binaries
-cp -R bin $HOME/bin
-cp -R scripts $HOME/scripts
+copy_custom_scripts() {
+	cp -R bin $HOME/bin
+	chmod a+x $HOME/bin/*
+	cp -R scripts $HOME/scripts
+	chmod a+x $HOME/scripts/*
+}
 
-# TODO: Neovim configuration
+add_neovim_config() {
+	# TODO
+}
 
-# Install doom
-git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
-$HOME/.emacs.d/bin/doom install
+install_doom() {
+	git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
+	ln -s $HOME/.emacs.d/bin/doom $HOME/bin/doom
+	$HOME/bin/doom install
+}
+
+add_emacs_config() {
+	# TODO
+}
+
+main
