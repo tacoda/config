@@ -58,6 +58,7 @@ install_packages() {
 		"nixpkgs#tldr" \
 		"nixpkgs#tmux" \
 		"nixpkgs#tokei" \
+		"nixpkgs#watchexec" \
 		"nixpkgs#xsv" \
 		"nixpkgs#yq" \
 		"nixpkgs#zellij" \
