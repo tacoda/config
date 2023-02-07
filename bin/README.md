@@ -20,3 +20,15 @@ Google a term:
 
 **`gogl`**
 
+[Script](bin/gogl)
+
+> _Depends on:_
+> - **curl**
+> - **jq**
+> - **`GOOGLE_API_KEY`**
+> - **`SEARCH_ENGINE`**
+
+Google a term:
+
+    gogl "tdd"
+
