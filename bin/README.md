@@ -20,7 +20,7 @@ Google a term:
 
 **`gogl`**
 
-[Script](bin/gogl)
+[Script](gogl)
 
 > _Depends on:_
 > - **curl**
