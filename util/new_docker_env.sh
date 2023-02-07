@@ -5,7 +5,7 @@
 
 DESTINATION=$2
 
-cp nix/python-flake.nix $DESTINATION/flake.nix
-cp make/nix.make $DESTINATION/Makefile
+cp docker/python.dockerfile $DESTINATION/Dockerfile
+cp make/docker.make $DESTINATION/Makefile
 (cd $DESTINATION && make build)
 
