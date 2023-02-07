@@ -11,6 +11,8 @@ main() {
 	add_neovim_config
 	install_doom
 	add_emacs_config
+	add_git_config
+	source_zsh
 }
 
 install_nix() {
@@ -23,7 +25,6 @@ source_nix() {
 
 enable_experimental_features() {
 	echo "experimental-features = nix-command flakes" >> $HOME/.config/nix/nix.conf
-	# NOTE: Do I need to source again?
 }
 
 install_packages() {
@@ -66,8 +67,8 @@ add_zsh_config() {
 copy_custom_scripts() {
 	cp -R bin $HOME/bin
 	chmod a+x $HOME/bin/*
-	cp -R scripts $HOME/scripts
-	chmod a+x $HOME/scripts/*
+	cp -R util $HOME/util
+	chmod a+x $HOME/util/*
 }
 
 add_neovim_config() {
@@ -82,6 +83,14 @@ install_doom() {
 
 add_emacs_config() {
 	# TODO
+}
+
+add_git_config() {
+	# TODO
+}
+
+source_zsh() {
+	source $HOME/.zshrc
 }
 
 main
