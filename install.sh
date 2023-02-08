@@ -7,12 +7,13 @@ main() {
 	prompt_user "install_packages" && install_packages
 	prompt_user "set_zsh_as_shell" && set_zsh_as_shell
 	prompt_user "add_zsh_config" && add_zsh_config
-	prompt_user "copy_custom_scripts" && copy_custom_scripts
-	# prompt_user "add_neovim_config" && add_neovim_config
-	prompt_user "install_doom" && install_doom
-	# prompt_user "add_emacs_config" && add_emacs_config
-	# prompt_user "add_git_config" && add_git_config
 	prompt_user "source_zsh" && source_zsh
+	prompt_user "copy_custom_scripts" && copy_custom_scripts
+	prompt_user "install_zen" && install_zen
+	# prompt_user "add_git_config" && add_git_config
+	prompt_user "install_doom" && install_doom
+	# prompt_user "add_neovim_config" && add_neovim_config
+	# prompt_user "add_emacs_config" && add_emacs_config
 }
 
 prompt_user() {
@@ -39,9 +40,12 @@ enable_experimental_features() {
 
 install_packages() {
 	nix profile install \
+		"nixpkgs#bash" \
 		"nixpkgs#bat" \
 		"nixpkgs#delta" \
 		"nixpkgs#direnv" \
+		"nixpkgs#docker" \
+		"nixpkgs#docker-compose" \
 		"nixpkgs#emacs" \
 		"nixpkgs#fd" \
 		"nixpkgs#fzf" \
@@ -90,6 +94,11 @@ install_doom() {
 	git clone --depth 1 https://github.com/doomemacs/doomemacs $HOME/.emacs.d
 	ln -s $HOME/.emacs.d/bin/doom $HOME/bin/doom
 	$HOME/bin/doom install
+}
+
+install_zen() {
+	git clone git@github.com:tacoda/zen.git $HOME/Code/zen
+	ln -s $HOME/Code/zen/zen $HOME/bin/zen
 }
 
 # add_emacs_config() {
